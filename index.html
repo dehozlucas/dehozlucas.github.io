@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Lucas - Game Developer</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,6 +16,9 @@
     <p>Game Developer | Systems & Combat Design</p>
 </header>
 
+<!-- =========================
+     ABOUT
+========================= -->
 <section id="about">
     <h2>About Me</h2>
 
@@ -31,6 +38,9 @@
     </p>
 </section>
 
+<!-- =========================
+     EXPERIENCE
+========================= -->
 <section id="experience">
     <h2>Experience</h2>
 
@@ -39,7 +49,6 @@
         <span>2 years</span>
         <p>
             Worked in a large-scale production environment with multidisciplinary teams.
-            Gained experience in production pipelines, teamwork, and live game development.
         </p>
     </div>
 
@@ -48,10 +57,6 @@
         <span>3 years</span>
         <p>
             Developed 100+ hypercasual prototypes and games.
-            Strong focus on rapid iteration, core gameplay mechanics, and performance.
-        </p>
-        <p>
-            Demonstrated ability to independently develop and test multiple game concepts.
         </p>
     </div>
 
@@ -59,92 +64,181 @@
         <h3>Quest Seeker Games — Co-Founder & Game Developer</h3>
         <span>2 years</span>
         <p>
-            Led the development of Rogue Slime, a systems-driven roguelite.
+            Creator of Rogue Slime, a systems-driven roguelite.
         </p>
         <ul>
             <li>500k+ organic installs</li>
             <li>Active community</li>
-            <li>Steam version in development (Demo available)</li>
+            <li>Steam version in development</li>
         </ul>
     </div>
 </section>
 
-<section id="projects">
-    <h2>Projects</h2>
+<!-- =========================
+     PROJECTS
+========================= -->
+<section id="projects-carousel">
 
-    <!-- ROGUE SLIME -->
-    <div class="project">
-        <h3>Rogue Slime</h3>
+    <div class="carousel">
 
-        <img src="assets/images/rogue-slime.png" alt="Rogue Slime">
+        <!-- SLIDE 1 -->
+        <div class="slide active">
+            <video autoplay muted loop class="bg-video">
+                <source src="assets/videos/rogue-slime.mp4" type="video/mp4">
+            </video>
 
-        <p>
-            Turn-based roguelite focused on energy-driven combat systems and player build strategies.
-        </p>
+            <div class="content">
+                <h2>Rogue Slime</h2>
+                <p>Turn-based roguelite with energy-driven combat.</p>
 
-        <ul>
-            <li>500k+ downloads (organic)</li>
-            <li>High player retention and engagement</li>
-            <li>PC version in development</li>
-        </ul>
+                <ul>
+                    <li>500k+ downloads</li>
+                    <li>High engagement</li>
+                    <li>PC version in development</li>
+                </ul>
 
-        <div class="links">
-            <a href="#">Steam Page</a>
-            <a href="#">Google Play</a>
-            <a href="#">App Store</a>
-            <a href="#">Trailer / Gameplay</a>
+                <div class="links">
+                    <a href="#">Steam</a>
+                    <a href="#">Google Play</a>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- CLAW BUILDER -->
-    <div class="project">
-        <h3>Claw Builder</h3>
+        <!-- SLIDE 2 -->
+        <div class="slide">
+            <video autoplay muted loop class="bg-video">
+                <source src="assets/videos/claw-builder.mp4" type="video/mp4">
+            </video>
 
-        <img src="assets/images/claw-builder.png">
-
-        <p>
-            Hypercasual game focused on satisfying mechanics and progression loops.
-        </p>
-
-        <div class="links">
-            <a href="#">Gameplay Video</a>
-            <a href="#">Store Link</a>
+            <div class="content">
+                <h2>Claw Builder</h2>
+                <p>Hypercasual with satisfying mechanics.</p>
+            </div>
         </div>
-    </div>
 
-    <!-- DINO RUN -->
-    <div class="project">
-        <h3>Dino Run</h3>
+        <!-- SLIDE 3 -->
+        <div class="slide">
+            <video autoplay muted loop class="bg-video">
+                <source src="assets/videos/dino-run.mp4" type="video/mp4">
+            </video>
 
-        <img src="assets/images/dino-run.png">
-
-        <p>
-            Fast-paced hypercasual experience with simple but addictive gameplay loops.
-        </p>
-
-        <div class="links">
-            <a href="#">Gameplay Video</a>
-            <a href="#">Store Link</a>
+            <div class="content">
+                <h2>Dino Run</h2>
+                <p>Fast-paced hypercasual loop.</p>
+            </div>
         </div>
+
+        <!-- CONTROLS -->
+        <button class="nav left" onclick="prevSlide()">‹</button>
+        <button class="nav right" onclick="nextSlide()">›</button>
+
     </div>
 
 </section>
 
+<!-- =========================
+     GAME JAMS
+========================= -->
+<section id="gamejams">
+    <h2>Game Jams</h2>
+
+    <p>
+        Experimental games focused on rapid prototyping and new mechanics.
+    </p>
+
+    <div class="projects-container">
+
+        <div class="project">
+            <h3>Miniature Heist</h3>
+            <img src="assets/images/miniature-heist.png">
+
+            <p>Dungeon puzzle with scale-model mechanics.</p>
+
+            <div class="links">
+                <a href="https://luquitasdev.itch.io/miniature-heist" target="_blank">View</a>
+                <button onclick="toggleGame('heist')">Play</button>
+            </div>
+
+            <div class="game-frame" id="heist">
+                <iframe src="https://luquitasdev.itch.io/miniature-heist/embed"></iframe>
+                <button onclick="toggleGame('heist')">Close</button>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>Dicey Hell</h3>
+            <img src="assets/images/dicey-hell.png">
+
+            <p>Survival game with dice-based mechanics.</p>
+
+            <div class="links">
+                <a href="https://luquitasdev.itch.io/diceyhell" target="_blank">View</a>
+                <button onclick="toggleGame('dice')">Play</button>
+            </div>
+
+            <div class="game-frame" id="dice">
+                <iframe src="https://luquitasdev.itch.io/diceyhell/embed"></iframe>
+                <button onclick="toggleGame('dice')">Close</button>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>Believe or Die</h3>
+            <img src="assets/images/believe-or-die.png">
+
+            <p>Action game about maintaining followers as a god.</p>
+
+            <div class="links">
+                <a href="https://luquitasdev.itch.io/believeordie" target="_blank">View</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+     TWITCH
+========================= -->
+<section id="twitch">
+    <h2>Live Dev Streams</h2>
+
+    <iframe
+        src="https://player.twitch.tv/?channel=luquitasdev&parent=dehozlucas.github.io"
+        height="400"
+        width="100%"
+        allowfullscreen>
+    </iframe>
+
+    <p>
+        <a href="https://twitch.tv/luquitasdev" target="_blank">
+            twitch.tv/luquitasdev
+        </a>
+    </p>
+</section>
+
+<!-- =========================
+     SKILLS
+========================= -->
 <section id="skills">
     <h2>Skills</h2>
 
     <ul>
         <li>Unity (C#)</li>
-        <li>Game Design (Systems, Combat, Progression)</li>
+        <li>Game Design</li>
         <li>Rapid Prototyping</li>
-        <li>UI/UX Implementation</li>
-        <li>Live Ops & Balancing</li>
+        <li>UI/UX</li>
+        <li>Live Ops</li>
     </ul>
 </section>
 
+<!-- =========================
+     FOOTER
+========================= -->
 <footer>
     <p>Contact: yourmail@email.com</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
