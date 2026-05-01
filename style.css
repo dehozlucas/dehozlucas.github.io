@@ -1,34 +1,52 @@
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     margin: 0;
-    background: #0f0f0f;
-    color: white;
+    background: #0d0f14;
+    color: #e6e6e6;
 }
 
 header {
     text-align: center;
-    padding: 40px;
-    background: #1a1a1a;
+    padding: 60px 20px;
+    background: #151922;
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2a2f3a;
+    padding-bottom: 10px;
 }
 
 section {
-    padding: 40px;
     max-width: 900px;
     margin: auto;
+    padding: 40px 20px;
 }
 
-.project {
-    background: #1a1a1a;
+.job, .project {
+    background: #151922;
     padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
 .project img {
     width: 100%;
     border-radius: 10px;
+    margin: 10px 0;
 }
 
-a {
+.links a {
+    margin-right: 15px;
     color: #4ea1ff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
 }
