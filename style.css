@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Roboto, sans-serif;
+    font-family: Inter, sans-serif;
     color: #e6e6e6;
 
     background: radial-gradient(circle at 20% 20%, #1a1f2b, transparent),
@@ -29,14 +29,111 @@ h2 {
 
 
 section {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 40px 5px;
+}
+
+/* =========================
+   ABOUT LAYOUT
+========================= */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    margin-top: 20px;
+}
+
+
+.about-left {
+    flex-shrink: 0;
+}
+
+.profile-pic {
+    width: 360px;
+    height: 360px;
+
+    border-radius: 70%;
+    object-fit: cover;
+
+    border: 2px solid rgba(78,161,255,0.2);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+}
+
+/* TEXTO */
+
+.about-right {
+    max-width: 1000px;
+}
+
+.about-right h2 {
+    margin-top: 0;
+}
+
+/* CONTACT */
+
+.about-contact {
+    margin-top: 20px;
+}
+
+.about-contact span {
+    display: block;
+    margin-bottom: 10px;
+    color: #9aa4b2;
+}
+
+/* SOCIALS */
+
+.socials a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 5px;
+
+    padding: 6px 12px;
+    font-size: 14px;
+
+    background: #1f2633;
+    border-radius: 6px;
+
+    color: #4ea1ff;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.socials a:hover {
+    background: #4ea1ff;
+    color: black;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-right {
+        max-width: 100%;
+    }
 }
 
 .job,
 .gamejam-card,
-.skill-card {
+.skill-card
+.skill-pill {
     background: #151922;
     border-radius: 12px;
     border: 1px solid transparent;
@@ -50,7 +147,8 @@ section {
 
 .job:hover,
 .gamejam-card:hover,
-.skill-card:hover {
+.skill-card:hover,
+.skill-pill:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     border: 1px solid rgba(78,161,255,0.25);
@@ -60,13 +158,15 @@ section {
 
 .job h3,
 .gamejam-card h3,
-.skill-card h3 {
+.skill-card h3
+.skill-pill h3 {
     transition: color 0.2s ease;
 }
 
 .job:hover h3,
 .gamejam-card:hover h3,
-.skill-card:hover h3 {
+.skill-card:hover h3 
+.skill-pill:hover h3{
     color: #4ea1ff;
 }
 
@@ -703,58 +803,101 @@ section, .project {
     background: black;
 }
 
-/* =========================
-   CORE SKILLS
+//* =========================
+   CORE SKILLS HORIZONTAL
 ========================= */
 
-#skills {
-    max-width: 900px;
-    margin: 100px auto;
+#core-skills {
+    margin: 40px auto 20px auto;
     padding: 0 20px;
 }
 
-/* GRID */
+/* fila centrada */
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
+.skills-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* CARD */
+/* pills */
 
-.skill-card {
+.skill-pill {
     background: #151922;
-    padding: 25px;
-    border-radius: 14px;
+    padding: 12px 22px;
+    border-radius: 999px;
 
-    position: relative;
-    overflow: hidden;
-
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* glow sutil */
-
-.skill-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: radial-gradient(circle at top left, rgba(78,161,255,0.15), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* texto */
-
-.skill-card h3 {
-    margin: 0 0 10px 0;
-    font-size: 22px;
-}
-
-.skill-card p {
-    margin: 0;
-    color: #9aa4b2;
     font-size: 14px;
+    letter-spacing: 0.5px;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border 0.25s ease;
+}
+
+
+/* =========================
+   PHOTO + HOVER SKILLS
+========================= */
+
+
+.skills-hover {
+    position: absolute;
+    top: 50%;
+    right: 100%; 
+    transform: translateY(-50%) translateX(20px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+}
+
+/* ITEMS */
+
+.skill-item {
+    background: #151922;
+    padding: 10px 16px;
+    border-radius: 999px;
+
+    font-size: 13px;
+    white-space: nowrap;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border 0.25s ease;
+}
+
+/* HOVER GLOBAL (aparece todo) */
+
+.photo-wrapper:hover .skills-hover {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-10px);
+}
+
+/* HOVER INDIVIDUAL (unificado con tu sistema) */
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(78,161,255,0.25);
+    border: 1px solid rgba(78,161,255,0.35);
+}
+
+
+.skills-title {
+    font-size: 11px;
+    opacity: 1;
+    margin-bottom: 6px;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
 }
