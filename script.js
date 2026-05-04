@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollAnimations();
     initClickFeedback();
     initHeroScroll();
+    initVideoGrid();
 });
 
 
@@ -92,4 +93,60 @@ function prevSlide() {
     showSlide(current);
 }
 
-setInterval(nextSlide, 6000);
+setInterval(nextSlide, 10000);
+
+function initVideoGrid() {
+    const grids = document.querySelectorAll(".video-grid");
+
+    grids.forEach(grid => {
+        const videoSrc = grid.dataset.video;
+
+        const columns = 4;
+
+        for (let i = 0; i < columns; i++) {
+            const tile = document.createElement("div");
+            tile.classList.add("video-tile");
+
+           const video = document.createElement("video");
+
+            video.src = videoSrc;
+            video.muted = true;
+            video.loop = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            video.controls = false;
+            video.preload = "auto";
+
+            video.style.width = "100%";
+            video.style.height = "100%";
+            video.style.objectFit = "cover";
+
+            video.oncanplay = () => {
+                video.currentTime = Math.random() * (video.duration || 5);
+                video.play().catch(() => {});
+            };
+
+           video.addEventListener("loadedmetadata", () => {
+                const duration = video.duration;
+
+                const minSpacing = 0.15; // 15%
+                const baseOffset = i * minSpacing;
+
+                // pequeño random dentro del segmento (para que no se vea demasiado perfecto)
+                const randomOffset = Math.random() * (minSpacing * 0.5);
+
+                let time = (baseOffset + randomOffset) * duration;
+
+                // loop por si se pasa de 1
+                time = time % duration;
+
+                video.currentTime = time;
+
+                video.play().catch(() => {});
+            });
+
+            tile.appendChild(video);
+            grid.appendChild(tile);
+        }
+    });
+}
