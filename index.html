@@ -176,9 +176,6 @@
     </div>
 
 </section>
-<!-- =========================
-     GAME JAMS
-========================= -->
 <section id="gamejams">
     <h2>Game Jams</h2>
 
@@ -188,49 +185,90 @@
 
     <div class="projects-container">
 
-        <div class="project">
-            <h3>Miniature Heist</h3>
-            <img src="assets/images/miniature-heist.png">
+        <!-- PROJECT 1 -->
+        <div class="project video-project" data-video="assets/videos/miniature-heist-gameplay.mp4">
 
-            <p>Dungeon puzzle with scale-model mechanics.</p>
+            <video class="bg-video" muted loop playsinline></video>
 
-            <div class="links">
-                <a href="https://luquitasdev.itch.io/miniature-heist" target="_blank">View</a>
-                <button onclick="toggleGame('heist')">Play</button>
+            <div class="project-layout">
+
+                <div class="project-left">
+                    <img src="assets/images/miniature-heist.png" class="game-icon">
+                </div>
+
+                <div class="project-right">
+                    <h3>Miniature Heist</h3>
+                    <p>Dungeon puzzle with scale-model mechanics.</p>
+
+                    <div class="links">
+                        <a href="https://luquitasdev.itch.io/miniature-heist" target="_blank">View</a>
+                        <button onclick="openGame('https://luquitasdev.itch.io/miniature-heist/embed')">
+                            Play
+                        </button>
+                    </div>
+                </div>
+
             </div>
 
             <div class="game-frame" id="heist">
                 <iframe src="https://luquitasdev.itch.io/miniature-heist/embed"></iframe>
                 <button onclick="toggleGame('heist')">Close</button>
             </div>
+
         </div>
 
-        <div class="project">
-            <h3>Dicey Hell</h3>
-            <img src="assets/images/dicey-hell.png">
+        <!-- PROJECT 2 -->
+        <div class="project video-project" data-video="assets/videos/dicey-hell.mp4">
 
-            <p>Survival game with dice-based mechanics.</p>
+            <video class="bg-video" muted loop playsinline></video>
 
-            <div class="links">
-                <a href="https://luquitasdev.itch.io/diceyhell" target="_blank">View</a>
-                <button onclick="toggleGame('dice')">Play</button>
+            <div class="project-layout">
+
+                <div class="project-left">
+                    <img src="assets/images/dicey-hell.png" class="game-icon">
+                </div>
+
+                <div class="project-right">
+                    <h3>Dicey Hell</h3>
+                    <p>Survival game with dice-based mechanics.</p>
+
+                    <div class="links">
+                        <a href="https://luquitasdev.itch.io/diceyhell" target="_blank">View</a>
+                        <button onclick="toggleGame('dice')">Play</button>
+                    </div>
+                </div>
+
             </div>
 
             <div class="game-frame" id="dice">
                 <iframe src="https://luquitasdev.itch.io/diceyhell/embed"></iframe>
                 <button onclick="toggleGame('dice')">Close</button>
             </div>
+
         </div>
 
-        <div class="project">
-            <h3>Believe or Die</h3>
-            <img src="assets/images/believe-or-die.png">
+        <!-- PROJECT 3 -->
+        <div class="project video-project" data-video="assets/videos/believe-or-die.mp4">
 
-            <p>Action game about maintaining followers as a god.</p>
+            <video class="bg-video" muted loop playsinline></video>
 
-            <div class="links">
-                <a href="https://luquitasdev.itch.io/believeordie" target="_blank">View</a>
+            <div class="project-layout">
+
+                <div class="project-left">
+                    <img src="assets/images/believe-or-die.png" class="game-icon">
+                </div>
+
+                <div class="project-right">
+                    <h3>Believe or Die</h3>
+                    <p>Action game about maintaining followers as a god.</p>
+
+                    <div class="links">
+                        <a href="https://luquitasdev.itch.io/believeordie" target="_blank">View</a>
+                    </div>
+                </div>
+
             </div>
+
         </div>
 
     </div>
@@ -279,6 +317,18 @@
 </footer>
 
 <script src="script.js"></script>
+
+<div id="game-modal" class="game-modal">
+
+    <div class="modal-content">
+
+        <button class="close-btn" onclick="closeGame()">✕</button>
+
+        <iframe id="game-iframe"></iframe>
+
+    </div>
+
+</div>
 
 </body>
 </html>

@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initClickFeedback();
     initHeroScroll();
     initVideoGrid();
+    initProjectVideos();
 });
 
 
@@ -136,4 +137,41 @@ function initVideoGrid() {
             grid.appendChild(tile);
         }
     });
+}
+function initProjectVideos() {
+    const projects = document.querySelectorAll(".video-project");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const video = entry.target.querySelector("video");
+            const src = entry.target.dataset.video;
+
+            if (entry.isIntersecting) {
+                if (!video.src) {
+                    video.src = src;
+                }
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    projects.forEach(p => observer.observe(p));
+}
+
+function openGame(url) {
+    const modal = document.getElementById("game-modal");
+    const iframe = document.getElementById("game-iframe");
+
+    iframe.src = url;
+    modal.classList.add("open");
+}
+
+function closeGame() {
+    const modal = document.getElementById("game-modal");
+    const iframe = document.getElementById("game-iframe");
+
+    iframe.src = ""; 
+    modal.classList.remove("open");
 }
