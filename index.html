@@ -74,6 +74,9 @@
     </div>
 </section>
 
+
+
+
 <!-- =========================
      PROJECTS
 ========================= -->
@@ -175,105 +178,74 @@
 
     </div>
 
-</section>
-<section id="gamejams">
-    <h2>Game Jams</h2>
+<!-- =========================
+     CORE SKILLS
+========================= -->
+<section id="skills">
 
-    <p>
-        Experimental games focused on rapid prototyping and new mechanics.
-    </p>
+    <h2 class="center">Core Skills</h2>
 
-    <div class="projects-container">
+    <div class="skills-grid">
 
-        <!-- PROJECT 1 -->
-        <div class="project video-project" data-video="assets/videos/miniature-heist-gameplay.mp4">
-
-            <video class="bg-video" muted loop playsinline></video>
-
-            <div class="project-layout">
-
-                <div class="project-left">
-                    <img src="assets/images/miniature-heist.png" class="game-icon">
-                </div>
-
-                <div class="project-right">
-                    <h3>Miniature Heist</h3>
-                    <p>Dungeon puzzle with scale-model mechanics.</p>
-
-                    <div class="links">
-                        <a href="https://luquitasdev.itch.io/miniature-heist" target="_blank">View</a>
-                        <button onclick="openGame('https://luquitasdev.itch.io/miniature-heist/embed')">
-                            Play
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="game-frame" id="heist">
-                <iframe src="https://luquitasdev.itch.io/miniature-heist/embed"></iframe>
-                <button onclick="toggleGame('heist')">Close</button>
-            </div>
-
+        <div class="skill-card">
+            <h3>Unity (C#)</h3>
+            <p>7+ years building scalable gameplay systems and production-ready features.</p>
         </div>
 
-        <!-- PROJECT 2 -->
-        <div class="project video-project" data-video="assets/videos/dicey-hell.mp4">
-
-            <video class="bg-video" muted loop playsinline></video>
-
-            <div class="project-layout">
-
-                <div class="project-left">
-                    <img src="assets/images/dicey-hell.png" class="game-icon">
-                </div>
-
-                <div class="project-right">
-                    <h3>Dicey Hell</h3>
-                    <p>Survival game with dice-based mechanics.</p>
-
-                    <div class="links">
-                        <a href="https://luquitasdev.itch.io/diceyhell" target="_blank">View</a>
-                        <button onclick="toggleGame('dice')">Play</button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="game-frame" id="dice">
-                <iframe src="https://luquitasdev.itch.io/diceyhell/embed"></iframe>
-                <button onclick="toggleGame('dice')">Close</button>
-            </div>
-
+        <div class="skill-card">
+            <h3>Game Design</h3>
+            <p>Strong focus on systems design, player decision making and engagement loops.</p>
         </div>
 
-        <!-- PROJECT 3 -->
-        <div class="project video-project" data-video="assets/videos/believe-or-die.mp4">
-
-            <video class="bg-video" muted loop playsinline></video>
-
-            <div class="project-layout">
-
-                <div class="project-left">
-                    <img src="assets/images/believe-or-die.png" class="game-icon">
-                </div>
-
-                <div class="project-right">
-                    <h3>Believe or Die</h3>
-                    <p>Action game about maintaining followers as a god.</p>
-
-                    <div class="links">
-                        <a href="https://luquitasdev.itch.io/believeordie" target="_blank">View</a>
-                    </div>
-                </div>
-
-            </div>
-
+        <div class="skill-card">
+            <h3>Rapid Prototyping</h3>
+            <p>Ability to quickly test ideas, iterate, and validate gameplay concepts.</p>
         </div>
 
     </div>
-</section>
 
+</section>
+<!-- =========================
+     GAME JAMS
+========================= -->
+<section id="gamejams">
+
+    <h2 class="center">Game Jams</h2>
+
+    <p class="gamejams-subtitle center">
+        I enjoy participating in game jams to experiment with new ideas,
+        explore mechanics, and push rapid prototyping to its limits.
+    </p>
+
+    <div class="gamejams-list">
+
+        <div class="gamejam-card">
+            <h3>Miniature Heist</h3>
+
+            <div class="widget-wrapper">
+                <iframe src="https://itch.io/embed/2908289"></iframe>
+            </div>
+        </div>
+
+        <div class="gamejam-card">
+            <h3>Dicey Hell</h3>
+
+            <div class="widget-wrapper">
+                <iframe src="https://itch.io/embed/1618951"></iframe>
+            </div>
+        </div>
+
+        <div class="gamejam-card">
+            <h3>Believe or Die</h3>
+
+            <div class="widget-wrapper">
+                <iframe src="https://itch.io/embed/1420086"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 <!-- =========================
      TWITCH
 ========================= -->
@@ -294,20 +266,7 @@
     </p>
 </section>
 
-<!-- =========================
-     SKILLS
-========================= -->
-<section id="skills">
-    <h2>Skills</h2>
 
-    <ul>
-        <li>Unity (C#)</li>
-        <li>Game Design</li>
-        <li>Rapid Prototyping</li>
-        <li>UI/UX</li>
-        <li>Live Ops</li>
-    </ul>
-</section>
 
 <!-- =========================
      FOOTER
@@ -317,17 +276,6 @@
 </footer>
 
 <script src="script.js"></script>
-
-<div id="game-modal" class="game-modal">
-
-    <div class="modal-content">
-
-        <button class="close-btn" onclick="closeGame()">✕</button>
-
-        <iframe id="game-iframe"></iframe>
-
-    </div>
-
 </div>
 
 </body>
