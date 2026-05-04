@@ -107,24 +107,11 @@ function initVideoGrid() {
             const tile = document.createElement("div");
             tile.classList.add("video-tile");
 
-           const video = document.createElement("video");
-
+            const video = document.createElement("video");
             video.src = videoSrc;
             video.muted = true;
             video.loop = true;
-            video.autoplay = true;
             video.playsInline = true;
-            video.controls = false;
-            video.preload = "auto";
-
-            video.style.width = "100%";
-            video.style.height = "100%";
-            video.style.objectFit = "cover";
-
-            video.oncanplay = () => {
-                video.currentTime = Math.random() * (video.duration || 5);
-                video.play().catch(() => {});
-            };
 
            video.addEventListener("loadedmetadata", () => {
                 const duration = video.duration;
