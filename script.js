@@ -1,6 +1,4 @@
-// ===============================
-// INIT
-// ===============================
+
 document.addEventListener("DOMContentLoaded", () => {
     initScrollAnimations();
     initClickFeedback();
@@ -117,15 +115,13 @@ function initVideoGrid() {
            video.addEventListener("loadedmetadata", () => {
                 const duration = video.duration;
 
-                const minSpacing = 0.15; // 15%
+                const minSpacing = 0.15;
                 const baseOffset = i * minSpacing;
 
-                // pequeño random dentro del segmento (para que no se vea demasiado perfecto)
                 const randomOffset = Math.random() * (minSpacing * 0.5);
 
                 let time = (baseOffset + randomOffset) * duration;
 
-                // loop por si se pasa de 1
                 time = time % duration;
 
                 video.currentTime = time;

@@ -885,8 +885,6 @@ section, .project {
     transform: translateY(-50%) translateX(-10px);
 }
 
-/* HOVER INDIVIDUAL (unificado con tu sistema) */
-
 .skill-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 0 20px rgba(78,161,255,0.25);
@@ -900,4 +898,150 @@ section, .project {
     margin-bottom: 6px;
     transform: translateX(10px);
     transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+
+   section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    header {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+
+
+    #core-skills {
+        order: 2;
+    }
+
+    #about {
+        order: 3;
+    }
+
+    #experience {
+        order: 4;
+    }
+
+    #projects-carousel {
+        order: 5;
+    }
+
+    #gamejams {
+        order: 6;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        order: 0;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+
+    .skills-hover {
+        position: static;
+        transform: none;
+        opacity: 1;
+
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+     .photo-wrapper:hover .skills-hover {
+        opacity: 1;
+        transform: none;
+    }
+
+    .skills-hover,
+    .skill-item,
+    .profile-pic {
+        transition: none !important;
+    }
+
+    .profile-pic:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+
+
+    .skills-title {
+        display: none;
+    }
+
+    .skill-item {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+
+    .hero-layout {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .game-icon {
+        width: 160px;
+    }
+
+    .hero-right h2 {
+        font-size: 28px;
+    }
+
+    .hero-right p {
+        font-size: 14px;
+    }
+
+    .video-grid {
+        display: none;
+    }
+
+    .bg-video {
+        display: none;
+    }
+
+
+    .carousel {
+        height: auto;
+        min-height: 400px;
+        align-items: center; 
+    }
+
+    .job {
+        padding: 15px;
+    }
+
+    .gamejam-card {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .widget-wrapper iframe {
+        height: 150px;
+    }
 }
